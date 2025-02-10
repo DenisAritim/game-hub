@@ -7,6 +7,7 @@ import theme from "./theme";
 import "./index.css";
 import router from "./routes";
 import { RouterProvider } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
             <QueryClientProvider client={queryClient}>
                 <RouterProvider router={router} />
                 <ReactQueryDevtools />
+                <Analytics />
             </QueryClientProvider>
         </ChakraProvider>
     </React.StrictMode>,
